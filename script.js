@@ -1,6 +1,13 @@
 const progressBar = document.getElementById("progressBar");
 const heroBg = document.getElementById("heroBg");
+const topAppBar = document.getElementById("topAppBar");
+const fab = document.getElementById("fab");
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* FAB 클릭 시 맨 위로 이동 */
+fab.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+});
 
 /* ===== [효과 1] 아래에서 위로 페이드인 =====
    IntersectionObserver로 요소가 화면에 들어오는 순간을 감지해
@@ -41,6 +48,12 @@ function onScroll() {
   if (!reduceMotion && scrollY <= window.innerHeight) {
     heroBg.style.transform = `translate3d(0, ${scrollY * 0.3}px, 0)`;
   }
+
+  /* M3 Top app bar: 히어로를 지나면 surface-container 색으로 전환 */
+  topAppBar.classList.toggle("is-scrolled", scrollY > window.innerHeight - topAppBar.offsetHeight);
+
+  /* M3 FAB: 히어로 절반 이상 내려가면 표시 */
+  fab.classList.toggle("is-visible", scrollY > window.innerHeight * 0.5);
 
   ticking = false;
 }
