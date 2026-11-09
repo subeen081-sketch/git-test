@@ -1,12 +1,4 @@
-/* =========================================================
-   Material Design 3 기반 디자인 시스템
-   - 색상: M3 baseline 색상 역할(color roles), 라이트/다크 지원
-   - 타이포: M3 type scale (Display / Headline / Title / Body / Label)
-   - 모양: M3 shape scale (corner radius)
-   - 고도: M3 elevation level 0~3
-   - 모션: M3 easing & duration 토큰
-   ========================================================= */
-
+/* ===== 기본 설정 ===== */
 *,
 *::before,
 *::after {
@@ -16,127 +8,22 @@
 }
 
 :root {
-  /* ----- Color: Light scheme ----- */
-  --md-sys-color-primary: #6750a4;
-  --md-sys-color-on-primary: #ffffff;
-  --md-sys-color-primary-container: #eaddff;
-  --md-sys-color-on-primary-container: #21005d;
-  --md-sys-color-secondary: #625b71;
-  --md-sys-color-secondary-container: #e8def8;
-  --md-sys-color-on-secondary-container: #1d192b;
-  --md-sys-color-tertiary-container: #ffd8e4;
-  --md-sys-color-on-tertiary-container: #31111d;
-  --md-sys-color-surface: #fef7ff;
-  --md-sys-color-on-surface: #1d1b20;
-  --md-sys-color-on-surface-variant: #49454f;
-  --md-sys-color-surface-container-lowest: #ffffff;
-  --md-sys-color-surface-container-low: #f7f2fa;
-  --md-sys-color-surface-container: #f3edf7;
-  --md-sys-color-surface-container-high: #ece6f0;
-  --md-sys-color-surface-container-highest: #e6e0e9;
-  --md-sys-color-outline: #79747e;
-  --md-sys-color-outline-variant: #cac4d0;
-  --md-sys-color-scrim: #000000;
-
-  /* ----- Typography ----- */
-  --md-ref-typeface-brand: "Roboto", "Pretendard", system-ui, sans-serif;
-  --md-ref-typeface-plain: "Roboto", "Pretendard", system-ui, sans-serif;
-
-  /* ----- Shape ----- */
-  --md-sys-shape-corner-small: 8px;
-  --md-sys-shape-corner-medium: 12px;
-  --md-sys-shape-corner-large: 16px;
-  --md-sys-shape-corner-extra-large: 28px;
-  --md-sys-shape-corner-full: 9999px;
-
-  /* ----- Elevation (shadow) ----- */
-  --md-sys-elevation-1: 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15);
-  --md-sys-elevation-2: 0 1px 2px rgba(0, 0, 0, 0.3), 0 2px 6px 2px rgba(0, 0, 0, 0.15);
-  --md-sys-elevation-3: 0 1px 3px rgba(0, 0, 0, 0.3), 0 4px 8px 3px rgba(0, 0, 0, 0.15);
-
-  /* ----- Motion ----- */
-  --md-sys-motion-easing-standard: cubic-bezier(0.2, 0, 0, 1);
-  --md-sys-motion-easing-emphasized-decelerate: cubic-bezier(0.05, 0.7, 0.1, 1);
-  --md-sys-motion-duration-short4: 200ms;
-  --md-sys-motion-duration-medium2: 300ms;
-  --md-sys-motion-duration-long2: 500ms;
-  --md-sys-motion-duration-extra-long4: 1000ms;
-
-  /* ----- Layout ----- */
-  --gutter: clamp(16px, 5vw, 72px);
-  --app-bar-height: 64px;
+  --text: #111;
+  --sub: #666;
+  --bg: #fafafa;
+  --accent: #111;
+  --gutter: clamp(20px, 6vw, 80px);
 }
 
-/* ----- Color: Dark scheme ----- */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --md-sys-color-primary: #d0bcff;
-    --md-sys-color-on-primary: #381e72;
-    --md-sys-color-primary-container: #4f378b;
-    --md-sys-color-on-primary-container: #eaddff;
-    --md-sys-color-secondary: #ccc2dc;
-    --md-sys-color-secondary-container: #4a4458;
-    --md-sys-color-on-secondary-container: #e8def8;
-    --md-sys-color-tertiary-container: #633b48;
-    --md-sys-color-on-tertiary-container: #ffd8e4;
-    --md-sys-color-surface: #141218;
-    --md-sys-color-on-surface: #e6e0e9;
-    --md-sys-color-on-surface-variant: #cac4d0;
-    --md-sys-color-surface-container-lowest: #0f0d13;
-    --md-sys-color-surface-container-low: #1d1b20;
-    --md-sys-color-surface-container: #211f26;
-    --md-sys-color-surface-container-high: #2b2930;
-    --md-sys-color-surface-container-highest: #36343b;
-    --md-sys-color-outline: #938f99;
-    --md-sys-color-outline-variant: #49454f;
-  }
-}
-
-/* ===== Type scale 유틸리티 ===== */
-.md-display-large {
-  font-family: var(--md-ref-typeface-brand);
-  font-size: clamp(2.5rem, 7vw, 3.5625rem); /* 57px */
-  line-height: 1.12;                        /* 64px */
-  font-weight: 400;
-  letter-spacing: -0.25px;
-}
-
-.md-headline-large {
-  font-family: var(--md-ref-typeface-brand);
-  font-size: clamp(1.75rem, 4vw, 2rem); /* 32px */
-  line-height: 1.25;                    /* 40px */
-  font-weight: 400;
-}
-
-.md-title-large {
-  font-family: var(--md-ref-typeface-brand);
-  font-size: 1.375rem; /* 22px */
-  line-height: 1.75rem;
-  font-weight: 400;
-}
-
-.md-body-large {
-  font-size: 1rem; /* 16px */
-  line-height: 1.5rem;
-  letter-spacing: 0.5px;
-}
-
-.md-label-large {
-  font-size: 0.875rem; /* 14px */
-  line-height: 1.25rem;
-  font-weight: 500;
-  letter-spacing: 0.1px;
-}
-
-/* ===== 기본 ===== */
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: var(--md-ref-typeface-plain);
-  color: var(--md-sys-color-on-surface);
-  background: var(--md-sys-color-surface);
+  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
@@ -148,154 +35,24 @@ img {
   object-fit: cover;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.material-symbols-rounded {
-  font-size: 24px;
-  line-height: 1;
-  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
-  user-select: none;
-}
-
-/* ===== State layer (hover / focus / pressed) =====
-   M3 규칙: hover 8%, focus 10%, pressed 10% 불투명도 */
-.state-layer {
-  position: relative;
-  overflow: hidden;
-  isolation: isolate;
-}
-
-.state-layer::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: currentColor;
-  opacity: 0;
-  z-index: -1;
-  transition: opacity var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
-}
-
-.state-layer:hover::after { opacity: 0.08; }
-.state-layer:focus-visible::after,
-.state-layer:active::after { opacity: 0.1; }
-
-.state-layer:focus-visible {
-  outline: 3px solid var(--md-sys-color-primary);
-  outline-offset: 2px;
-}
-
-/* ===== [효과 3] Linear progress indicator ===== */
+/* ===== [효과 3] 스크롤 진행률 프로그래스 바 ===== */
 .progress-bar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 4px;
-  background: var(--md-sys-color-primary);
-  border-radius: 0 var(--md-sys-shape-corner-full) var(--md-sys-shape-corner-full) 0;
-  transform-origin: left center;
-  transform: scaleX(0);
-  z-index: 200;
-}
-
-/* ===== Top app bar (small) =====
-   히어로 위에서는 투명, 스크롤하면 surface-container 색으로 바뀜 (M3 on-scroll 동작) */
-.top-app-bar {
-  position: fixed;
-  inset: 0 0 auto 0;
-  height: var(--app-bar-height);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 0 var(--gutter);
-  color: #fff;
+  height: 3px;
+  background: var(--accent);
+  transform-origin: left center; /* 왼쪽 기준으로 늘어남 */
+  transform: scaleX(0);          /* JS에서 scaleX 값을 0~1로 변경 */
   z-index: 100;
-  transition:
-    background-color var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-standard),
-    color var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-standard);
-}
-
-.top-app-bar.is-scrolled {
-  background: var(--md-sys-color-surface-container);
-  color: var(--md-sys-color-on-surface);
-}
-
-.top-app-bar .brand {
-  flex: 1;
-}
-
-.top-app-bar nav {
-  display: flex;
-  gap: 4px;
-}
-
-.top-app-bar nav a {
-  padding: 10px 12px;
-  border-radius: var(--md-sys-shape-corner-full);
-}
-
-/* ===== Buttons ===== */
-.btn-filled {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  height: 40px;
-  padding: 0 24px 0 16px;
-  border: 0;
-  border-radius: var(--md-sys-shape-corner-full);
-  background: var(--md-sys-color-primary);
-  color: var(--md-sys-color-on-primary);
-  font-family: inherit;
-  cursor: pointer;
-  transition: box-shadow var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
-}
-
-.btn-filled:hover {
-  box-shadow: var(--md-sys-elevation-1);
-}
-
-.btn-filled .material-symbols-rounded {
-  font-size: 18px;
-}
-
-/* ===== FAB (맨 위로) ===== */
-.fab {
-  position: fixed;
-  right: var(--gutter);
-  bottom: 24px;
-  width: 56px;
-  height: 56px;
-  display: grid;
-  place-items: center;
-  border: 0;
-  border-radius: var(--md-sys-shape-corner-large);
-  background: var(--md-sys-color-primary-container);
-  color: var(--md-sys-color-on-primary-container);
-  box-shadow: var(--md-sys-elevation-3);
-  cursor: pointer;
-  z-index: 90;
-  opacity: 0;
-  transform: scale(0.6);
-  pointer-events: none;
-  transition:
-    opacity var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-standard),
-    transform var(--md-sys-motion-duration-medium2) var(--md-sys-motion-easing-emphasized-decelerate);
-}
-
-.fab.is-visible {
-  opacity: 1;
-  transform: scale(1);
-  pointer-events: auto;
 }
 
 /* ===== 히어로 ===== */
 .hero {
   position: relative;
   height: 100vh;
-  height: 100svh;
+  height: 100svh; /* 모바일 주소창 높이 대응 */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -304,58 +61,52 @@ a {
   color: #fff;
 }
 
-/* [효과 2] 패럴랙스 배경 */
+/* [효과 2] 패럴랙스 배경: 위아래로 여유 공간을 두어 이동해도 빈 곳이 안 보이게 함 */
 .hero-bg {
   position: absolute;
   inset: -15% 0;
   background: url("https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=2000&q=80") center / cover no-repeat;
-  will-change: transform;
+  will-change: transform; /* 부드러운 이동을 위한 GPU 가속 힌트 */
 }
 
-/* M3 scrim: 텍스트 가독성 확보 */
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.25) 40%, rgba(0, 0, 0, 0.5));
+  background: rgba(0, 0, 0, 0.35);
 }
 
 .hero-content {
   position: relative;
   padding: 0 var(--gutter);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .hero h1 {
-  margin-bottom: 24px;
+  font-size: clamp(2.5rem, 8vw, 5.5rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin-bottom: 28px;
 }
 
 .hero p {
-  opacity: 0.92;
-  margin-bottom: 32px;
+  font-size: clamp(1rem, 2.2vw, 1.15rem);
+  opacity: 0.9;
 }
 
 .scroll-hint {
   position: absolute;
-  bottom: 28px;
+  bottom: 36px;
   left: 50%;
   transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
-  opacity: 0.8;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.7;
 }
 
 /* ===== 콘텐츠 섹션 ===== */
 .section {
-  padding: clamp(64px, 12vw, 160px) var(--gutter);
-  scroll-margin-top: var(--app-bar-height);
-}
-
-.section:nth-of-type(even) {
-  background: var(--md-sys-color-surface-container-low);
+  padding: clamp(100px, 16vw, 200px) var(--gutter);
 }
 
 .section-inner {
@@ -363,125 +114,89 @@ a {
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1.2fr;
-  gap: clamp(32px, 7vw, 96px);
+  gap: clamp(40px, 8vw, 120px);
   align-items: center;
 }
 
+/* 섹션2: 이미지와 텍스트 좌우 반전 */
 .section-inner.reverse .text {
   order: 2;
 }
 
-/* Assist chip 스타일의 섹션 라벨 */
-.chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  height: 32px;
-  padding: 0 16px 0 8px;
-  margin-bottom: 20px;
-  border-radius: var(--md-sys-shape-corner-small);
-  background: var(--md-sys-color-secondary-container);
-  color: var(--md-sys-color-on-secondary-container);
-}
-
-.chip .material-symbols-rounded {
-  font-size: 18px;
-}
-
 .section h2 {
-  color: var(--md-sys-color-on-surface);
-  margin-bottom: 16px;
+  font-size: clamp(2.25rem, 6vw, 4rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 24px;
 }
 
 .section p {
-  color: var(--md-sys-color-on-surface-variant);
+  font-size: clamp(1rem, 1.8vw, 1.1rem);
+  color: var(--sub);
 }
 
-/* Elevated card 안의 이미지 */
 .image {
   aspect-ratio: 4 / 5;
   overflow: hidden;
-  border-radius: var(--md-sys-shape-corner-extra-large);
-  background: var(--md-sys-color-surface-container-highest);
-  box-shadow: var(--md-sys-elevation-1);
-}
-
-.image img {
-  transition: transform var(--md-sys-motion-duration-long2) var(--md-sys-motion-easing-standard);
-}
-
-.image:hover img {
-  transform: scale(1.03);
+  border-radius: 4px;
+  background: #e8e8e8;
 }
 
 .footer {
-  padding: 40px var(--gutter) 104px;
+  padding: 60px var(--gutter);
   text-align: center;
-  color: var(--md-sys-color-on-surface-variant);
-  border-top: 1px solid var(--md-sys-color-outline-variant);
+  font-size: 0.85rem;
+  color: #999;
 }
 
-/* ===== [효과 1] 아래에서 위로 페이드인 (M3 emphasized decelerate) ===== */
+/* ===== [효과 1] 아래에서 위로 페이드인 ===== */
+/* 초기 상태: 투명 + 아래로 40px 내려간 상태 */
 .fade-up {
   opacity: 0;
   transform: translateY(40px);
   transition:
-    opacity var(--md-sys-motion-duration-extra-long4) var(--md-sys-motion-easing-standard),
-    transform var(--md-sys-motion-duration-extra-long4) var(--md-sys-motion-easing-emphasized-decelerate);
+    opacity 1s ease,
+    transform 1s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+/* 화면에 들어오면 JS가 is-visible 클래스 추가 → 제자리로 올라오며 나타남 */
 .fade-up.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
 
+/* 순차 등장을 위한 지연 시간 (제목 → 문장 → 이미지) */
 .delay-1 { transition-delay: 0.15s; }
 .delay-2 { transition-delay: 0.3s; }
-.delay-3 { transition-delay: 0.45s; }
 
 /* ===== 반응형 (모바일) ===== */
 @media (max-width: 768px) {
-  :root {
-    --app-bar-height: 56px;
-  }
-
-  .top-app-bar nav {
-    display: none;
-  }
-
   .section-inner {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* 세로 한 줄로 배치 */
   }
 
+  /* 모바일에서는 항상 텍스트 → 이미지 순서 */
   .section-inner.reverse .text {
     order: 0;
   }
 
   .image {
     aspect-ratio: 4 / 3;
-    border-radius: var(--md-sys-shape-corner-large);
   }
 
+  /* 줄바꿈 제거로 좁은 화면에서도 자연스럽게 */
   .section p br,
   .hero p br {
     display: none;
   }
 }
 
-/* 모션 줄이기 설정 사용자 배려 */
+/* 모션 줄이기 설정 사용자 배려: 애니메이션 비활성화 */
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
   .fade-up {
     opacity: 1;
     transform: none;
-    transition: none;
-  }
-
-  .image img,
-  .fab {
     transition: none;
   }
 }
